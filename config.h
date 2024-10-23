@@ -62,11 +62,15 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *poweroff[] = { "loginctl", "poweroff", NULL };
 static const char *reboot[] = { "loginctl", "reboot", NULL };
 static const char *suspend[] = { "loginctl", "suspend", NULL };
+static const char *passmenu[] = { "/home/david/.local/bin/pmenu", NULL };
+static const char *otpmenu[] = { "/home/david/.local/bin/omenu", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_o,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = passmenu } },
+	{ MODKEY,                       XK_q,      spawn,          {.v = otpmenu } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = poweroff } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = suspend } },
