@@ -29,6 +29,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "mpv",      NULL,       NULL,      1 << 2,            0,           -1 },
 	{ "st",       NULL,       NULL,      1 << 1,            0,           -1 },
+	{ "tabbed",   NULL,       NULL,      1 << 1,            0,           -1 },
 	{ "Firefox",  NULL,       NULL,      1 << 0,            0,           -1 },
 };
 
@@ -94,7 +95,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask|ControlMask,             XK_q,      quit,           {0} },
 };
 
 /* button definitions */
